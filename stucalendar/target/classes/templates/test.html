@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>thymeleaf局部刷新</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script type="text/javascript" th:src="@{http://code.jquery.com/jquery-latest.js}"></script>
+</head>
+<body>
+<div>
+    <span style="margin:0 auto;font-size: 6px;width: 10px" th:text="${refresh}"></span>
+    <button onClick="localRefresh()">点击刷新表格</button>
+</div>
+
+<!-- 需要局部刷新的部分，设置了th:fragment="table_refresh" -->
+<div id="table_refresh" style="text-align: center;margin:0 auto;width: 900px" th:fragment="table_refresh">
+    <h1 th:text="${title}"></h1>
+    <table width="100%" border="1" cellspacing="1" cellpadding="0">
+        <tr>
+            <td>Author</td>
+            <td>Book</td>
+            <td>Url</td>
+        </tr>
+        <tr th:each="book : ${books}">
+            <td th:text="${book.author}"></td>
+            <td th:text="${book.title}"></td>
+            <td th:text="${book.url}"></td>
+        </tr>
+    </table>
+</div>
+</body>
+<script>
+    function localRefresh() {
+        location.href = '[[@{/notes/local}]]';
+        // 装载局部刷新返回的页面
+        // $('#table_refresh').load("/notes/local");
+    }
+</script>
+</html>

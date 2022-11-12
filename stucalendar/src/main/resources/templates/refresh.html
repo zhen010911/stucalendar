@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <h1 align="center">定时提醒</h1>
+        <p>您今日的备忘录定时时间已到，请及时完成任务！！！</p>
+        <input type="button" value="back" th:onclick="back()">
+        <script>
+            function back() {
+                location.href='[[@{/notes/display}]]';
+            }
+        </script>
+</body>
+</html>

@@ -1,0 +1,271 @@
+@import "common";
+//滑动弹框
+.overflowHide{
+    position: fixed;
+    //top: 0;
+    left: 0;
+    width: 100%;
+}
+.sd-alert{
+    text-align: left;
+    .sd-shadow{
+        z-index: 1000;
+        background-color: rgba(0, 0, 0, .6);
+        display: none;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        _position: fixed;
+        pointer-events: auto;
+    }
+    .sd-content{
+        position: fixed;
+        top: 0;left: 0;
+        //right: 0;bottom: 0;
+        //background: rgba(0,0,0, 0);
+        width: 100%;
+        border: none;
+        background-color: #fff;
+        //overflow: hidden;
+        z-index: 2000;
+    }
+    .sd-top-show{
+        overflow-y: auto;
+        height: 200px;
+        animation: sd-top-show 0.3s ease 1;
+    }
+    .sd-top-hide{
+        animation: sd-top-hide 0.3s ease 1;
+        height: 200px;
+        animation-fill-mode: forwards;
+    }
+    .sd-bottom-show{
+        top: auto;bottom: 0;
+        height: 200px;
+        transform: translateY(100%);
+        overflow-y: auto;
+        animation: sd-bottom-show 0.3s ease 1;
+        animation-fill-mode: forwards;
+    }
+    .sd-bottom-hide{
+        top: auto;bottom: 0;
+        height: 200px;
+        animation: sd-bottom-hide 0.3s ease 1;
+        animation-fill-mode: forwards;
+    }
+    .sd-left-show{
+        overflow-y: auto;
+        left: 0;
+        width:80%;height: 100%;
+        transform: translateX(-100%);
+        animation: sd-left-show 0.3s ease 1;
+        animation-fill-mode: forwards;
+    }
+    .sd-left-hide{
+        overflow-y: auto;
+        left: 0;
+        width:80%;height: 100%;
+        transform: translateX(0);
+        animation: sd-left-hide 0.3s ease 1;
+        animation-fill-mode: forwards;
+    }
+    .sd-right-show{
+        overflow-y: auto;
+        right: 0;left: auto;
+        width:80%;height: 100%;
+        transform: translateX(100%);
+        animation: sd-right-show 0.3s ease 1;
+        animation-fill-mode: forwards;
+    }
+    .sd-right-hide{
+        overflow-y: auto;
+        right: 0;left: auto;
+        width:80%;height: 100%;
+        transform: translateX(0);
+        animation: sd-right-hide 0.3s ease 1;
+        animation-fill-mode: forwards;
+    }
+    .sd-alert-show{
+        overflow-y: auto;
+        width: 80%; height: 300px;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        //transform: translateX(-50%);
+        animation: sd-alert-show 0.3s ease 1;
+    }
+    .sd-alert-hide{
+        overflow-y: auto;
+        width: 80%; height: 300px;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        //transform: translateX(-50%);
+        animation: sd-alert-hide 0.3s ease 1;
+    }
+    .sd-tips-show,
+    .sd-tips-hide{
+        z-index: 2000;
+        position: fixed;
+        left: 0;right: 0;bottom: 0;top: 0;
+        margin: auto;
+        min-width: 30px;
+        min-height: 20px;
+        width: 30%;height: 30px;
+        line-height: 30px;
+        text-align: center;
+        background-color: rgba(0,0,0,0.6);
+        font-size: 14px;
+        color: #fff;
+        border-radius: 4px;
+        animation: sd-tips-show 0.3s ease 1;
+        animation-fill-mode: forwards;
+    }
+    .sd-tips-hide{
+        animation: sd-tips-hide 0.3s ease 1;
+        animation-fill-mode: forwards;
+    }
+}
+
+@keyframes sd-top-show {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(-100%);
+        transform: translateY(-100%)
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        transform: translateY(0)
+    }
+}
+@keyframes sd-top-hide {
+    0% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        transform: translateY(0)
+    }
+    100% {
+        opacity: 0;
+        -webkit-transform: translateY(-100%);
+        transform: translateY(-100%)
+    }
+}
+@keyframes sd-bottom-show {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(100%);
+        transform: translateY(100%)
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        transform: translateY(0)
+    }
+}
+@keyframes sd-bottom-hide {
+    0% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        transform: translateY(0)
+    }
+    100% {
+        opacity: 0;
+        -webkit-transform: translateY(100%);
+        transform: translateY(100%)
+    }
+}
+@keyframes sd-left-show {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateX(-100%);
+        transform: translateX(-100%)
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateX(0);
+        transform: translateX(0)
+    }
+}
+@keyframes sd-left-hide {
+    0% {
+        opacity: 1;
+        -webkit-transform: translateX(0);
+        transform: translateX(0)
+    }
+    100% {
+        opacity: 0;
+        -webkit-transform: translateX(-100%);
+        transform: translateX(-100%)
+    }
+}
+@keyframes sd-right-show {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateX(100%);
+        transform: translateX(100%)
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateX(0);
+        transform: translateX(0)
+    }
+}
+@keyframes sd-right-hide {
+    0% {
+        opacity: 1;
+        -webkit-transform: translateX(0);
+        transform: translateX(0)
+    }
+    100% {
+        opacity: 0;
+        -webkit-transform: translateX(100%);
+        transform: translateX(100%)
+    }
+}
+@keyframes sd-alert-show {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(-100%);
+        transform: translateY( -100%)
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        transform: translateY(0)
+    }
+}
+@keyframes sd-alert-hide {
+    0% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        transform: translateY(0)
+    }
+    100% {
+        opacity: 0;
+        -webkit-transform: translateY(100%);
+        transform: translateY(100%)
+    }
+}
+@keyframes sd-tips-show {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes sd-tips-hide {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}

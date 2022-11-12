@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wz.stucalendar.dao.CalendarDao">
+        <insert id="save" parameterType="Calendar" useGeneratedKeys="true" keyProperty="id">
+            insert into `cal` values(#{id},#{date},#{notes})
+        </insert>
+
+        <update id="update" parameterType="Calendar">
+            update `cal` set date=#{date},notes=#{notes}
+            where date=#{date}
+        </update>
+
+        <delete id="delete" parameterType="String">
+            delete from `cal` where date=#{date}
+        </delete>
+
+        <insert id="resave" parameterType="Calendar" useGeneratedKeys="true" keyProperty="id">
+            insert into `remind` values(#{id},#{date},#{hour},#{min},#{second},#{notes})
+        </insert>
+
+        <select id="ensure" parameterType="String" resultType="String">
+            select notes from `cal` where date=#{date}
+        </select>
+    
+        <select id="lists" resultType="Calendar">
+            select date,notes from `cal`
+        </select>
+
+        <select id="findByDate" resultType="Calendar">
+            select date,notes from `cal` where date=#{date}
+        </select>
+</mapper>
