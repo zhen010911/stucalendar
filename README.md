@@ -22,7 +22,7 @@ Step2.Environments for the project
 		~mybatis-spring-boot-starter
 		~spring-boot-starter-thymeleaf
 	 
-User Instruction Manual:
+User Instruction Manual
 
 	1.Creat environments and open the IDEA
 	2.Start your project
