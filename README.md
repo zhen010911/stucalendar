@@ -1,4 +1,4 @@
-# stucalendar
+# Wonderful calendar for students
 Steps for using this project
 
 Step1.Supports about equipments
