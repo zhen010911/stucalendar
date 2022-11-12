@@ -43,6 +43,8 @@ Introduction to features
 		*click the button and a table will appear
 		*tips:if there is nothing,please add a notes then back to this step,you are successful when you see a table
 	5.Automatic reminding
-		*if you set a fixed time to remind that day what you should,then the clock start and it'll refresh per 3 seconds to judge whether the present time is existed in the database;if it's true,the web will forward to the html which tell you what you have to do today
+		*if you set a fixed time to remind that day what you should,
+		then the clock start and it'll refresh per 3 seconds to judge whether the present time is existed in the database;
+		if it's true,the web will forward to the html which tell you what you have to do today
 Have fun!!!^-^
 		
